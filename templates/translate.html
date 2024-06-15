@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Tarjima qilish{% endblock %}
+{% block content %}
+<h1>Tarjima qilish</h1>
+<p>O'zbekchadan inglizchaga, inglizchadan o'zbekchaga tarjima qilish hizmati</p><br><br>
+<div class="input-group mb-3">
+    <form style="width: 90%;" action="" method="get">{% csrf_token %}
+        <input value="{{ data.text }}" required name="query" type="text" class="form-control" placeholder="Matn kiriting..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <br><button class="btn btn-outline-secondary" type="submit" id="button-addon2">Tarjima</button>
+    </form>
+</div>
+<br><br>
+{% if data.text %}
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>O'zbekcha</th>
+            <th>Inglizcha</th>
+        </tr>
+        <tr>
+            <td><code>{{ data.text_uz }}</code></td>
+            <td><code>{{ data.text_en }}</code></td>
+        </tr>
+    </table>
+{% endif %}
+{% endblock content %}

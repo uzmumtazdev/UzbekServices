@@ -7,7 +7,7 @@
 <p>O'zbekchadan inglizchaga, inglizchadan o'zbekchaga tarjima qilish hizmati</p><br><br>
 <div class="input-group mb-3">
     <form style="width: 90%;" action="" method="get">{% csrf_token %}
-        <textarea style="height:100px" required name="query" class="form-control" placeholder="Matn kiriting..." aria-label="Recipient's username" aria-describedby="button-addon2">{{ data.text }}</textarea>
+        <textarea style="height:300px" required name="query" class="form-control" placeholder="Matn kiriting..." aria-label="Recipient's username" aria-describedby="button-addon2">{{ data.text }}</textarea>
         <br><button class="btn btn-outline-secondary" type="submit" id="button-addon2">Tarjima</button>
     </form>
 </div>
